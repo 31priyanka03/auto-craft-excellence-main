@@ -25,29 +25,37 @@ const Hero: React.FC = () => {
   const stats = [
     { icon: Award, title: "25+ Years", subtitle: "Experience" },
     { icon: Users, title: "15K+", subtitle: "Happy Clients" },
-    { icon: Clock, title: "24/7", subtitle: "Services" },
+    { icon: Clock, title: "24/7", subtitle: "Service" },
   ];
 
   return (
     <section
       id="home"
       className="
-        relative w-full text-white overflow-hidden
-        bg-cover bg-no-repeat
-        bg-[center_85%] md:bg-center
-        min-h-[100svh] md:h-screen
+        relative w-full overflow-hidden text-white
+        min-h-[88svh] sm:min-h-[92svh] md:h-screen
         pt-[88px] md:pt-0
       "
-      style={{ backgroundImage: "url('/32123.png')" }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/35 to-black/75" />
+      {/* Background image */}
+      <img
+        src="/32123.png"
+        alt="Luxury Lamborghini"
+        className="
+          absolute inset-0 h-full w-full
+          object-cover
+          object-[68%_center]
+          sm:object-[60%_center]
+          md:object-center
+        "
+      />
 
-      {/* Content Container */}
-      <div className="relative z-10 flex min-h-[100svh] md:h-screen items-end">
-        <div className="w-full px-3 pb-4 md:px-0 md:pb-10">
-          
-          {/* Stats Grid */}
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
+
+      {/* Content */}
+      <div className="relative z-10 flex min-h-[88svh] sm:min-h-[92svh] md:h-screen items-end">
+        <div className="w-full px-3 pb-4 sm:pb-5 md:px-0 md:pb-10">
           <div
             className="
               mx-auto w-full max-w-5xl
@@ -72,7 +80,6 @@ const Hero: React.FC = () => {
                     "
                   >
                     <StatIcon Icon={Icon} />
-
                     <div>
                       <p className="text-[15px] md:text-[18px] font-semibold tracking-wide leading-none">
                         {c.title}
@@ -81,13 +88,11 @@ const Hero: React.FC = () => {
                         {c.subtitle}
                       </p>
                     </div>
-
                   </div>
                 </div>
               );
             })}
           </div>
-
         </div>
       </div>
     </section>

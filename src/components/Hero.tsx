@@ -33,28 +33,27 @@ const Hero: React.FC = () => {
       id="home"
       className="
         relative w-full overflow-hidden text-white
-        min-h-[88svh] sm:min-h-[92svh] md:h-screen
-        pt-[70px] md:pt-0
+        min-h-[95svh] md:h-screen
+        pt-[64px] md:pt-0
       "
     >
-      {/* Background image */}
       <img
-  src="/32123.png"
-  alt="Luxury Lamborghini"
-  className="
-    absolute inset-0 h-full w-full
-    object-cover
-    object-[50%_75%]
-    md:object-center
-  "
-/>
+        src="/32123.png"
+        alt="Luxury Lamborghini"
+        className="
+          absolute inset-0 h-full w-full
+          object-cover
+          scale-[1.02]
+          object-[52%_68%]
+          sm:object-[50%_72%]
+          md:scale-100 md:object-center
+        "
+      />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/82" />
 
-      {/* Content */}
-      <div className="relative z-10 flex min-h-[88svh] sm:min-h-[92svh] md:h-screen items-end">
-        <div className="w-full px-3 pb-4 sm:pb-5 md:px-0 md:pb-10">
+      <div className="relative z-10 flex min-h-[95svh] md:h-screen items-end">
+        <div className="w-full px-3 pb-2 sm:pb-3 md:px-0 md:pb-10">
           <div
             className="
               mx-auto w-full max-w-5xl

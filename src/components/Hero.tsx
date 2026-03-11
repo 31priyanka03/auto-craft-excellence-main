@@ -34,21 +34,20 @@ const Hero: React.FC = () => {
       className="
         relative w-full overflow-hidden text-white
         min-h-[88svh] sm:min-h-[92svh] md:h-screen
-        pt-[88px] md:pt-0
+        pt-[70px] md:pt-0
       "
     >
       {/* Background image */}
       <img
-        src="/32123.png"
-        alt="Luxury Lamborghini"
-        className="
-          absolute inset-0 h-full w-full
-          object-cover
-          object-[68%_center]
-          sm:object-[60%_center]
-          md:object-center
-        "
-      />
+  src="/32123.png"
+  alt="Luxury Lamborghini"
+  className="
+    absolute inset-0 h-full w-full
+    object-cover
+    object-[50%_75%]
+    md:object-center
+  "
+/>
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />

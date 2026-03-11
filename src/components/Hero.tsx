@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
   const stats = [
     { icon: Award, title: "25+ Years", subtitle: "Experience" },
     { icon: Users, title: "15K+", subtitle: "Happy Clients" },
-    { icon: Clock, title: "24/7", subtitle: "Service" },
+    { icon: Clock, title: "24/7", subtitle: "Services" },
   ];
 
   return (

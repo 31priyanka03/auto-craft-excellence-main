@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
     >
       {/* Mobile hero image */}
       <img
-        src="/mob.png"
+        src="/mob.png.png"
         alt="Luxury Lamborghini mobile"
         className="
           absolute inset-0

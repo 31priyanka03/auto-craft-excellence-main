@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
       className="
         relative w-full text-white overflow-hidden
         bg-cover bg-no-repeat
-        bg-[center_72%] md:bg-center
+        bg-[center_85%] md:bg-center
         min-h-[100svh] md:h-screen
         pt-[88px] md:pt-0
       "

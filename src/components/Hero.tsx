@@ -32,25 +32,22 @@ const Hero: React.FC = () => {
     <section
       id="home"
       className="
-        relative w-full text-white overflow-hidden bg-cover bg-center
+        relative w-full text-white overflow-hidden
+        bg-cover bg-no-repeat
+        bg-[center_72%] md:bg-center
         min-h-[100svh] md:h-screen
         pt-[88px] md:pt-0
       "
       style={{ backgroundImage: "url('/32123.png')" }}
     >
+      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/35 to-black/75" />
 
-      {/* spacer so stats don't sit too high on mobile */}
+      {/* Content Container */}
       <div className="relative z-10 flex min-h-[100svh] md:h-screen items-end">
-        <div
-          className="
-            w-full
-            px-3 pb-4
-            md:px-0 md:pb-10
-          "
-        >
-          {/* MOBILE: 1 column / 2 column clean grid
-              DESKTOP: 3 columns */}
+        <div className="w-full px-3 pb-4 md:px-0 md:pb-10">
+          
+          {/* Stats Grid */}
           <div
             className="
               mx-auto w-full max-w-5xl
@@ -75,6 +72,7 @@ const Hero: React.FC = () => {
                     "
                   >
                     <StatIcon Icon={Icon} />
+
                     <div>
                       <p className="text-[15px] md:text-[18px] font-semibold tracking-wide leading-none">
                         {c.title}
@@ -83,11 +81,13 @@ const Hero: React.FC = () => {
                         {c.subtitle}
                       </p>
                     </div>
+
                   </div>
                 </div>
               );
             })}
           </div>
+
         </div>
       </div>
     </section>

@@ -111,7 +111,7 @@ const Footer = () => {
           <div className="mt-2 text-[12px] text-slate-500">
             Built by{" "}
             <span className="text-[#D4AF37] font-semibold">
-              Hope’s IT Consultants
+              PY Nexus 
             </span>
           </div>
         </div>

@@ -65,8 +65,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "0208123456",
-      href: "tel:0208123456",
+      value: "02080500368",
+      href: "tel:02080500368",
       hoverType: "none",
     },
     {

@@ -25,45 +25,44 @@ const AccidentRepair = () => {
       <main className="bg-black">
         {/* ================= HERO IMAGE ================= */}
         <section className="w-full px-0">
-          <div className="relative w-full h-[82vh] overflow-hidden">
+          <div className="relative w-full h-[58vh] md:h-[82vh] overflow-hidden bg-black">
             <img
               src="/acci_2.png"
               alt="Accident repairs"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain md:object-cover bg-black"
             />
 
             {/* dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/60" />
 
             {/* BLACK CENTER DIVIDER */}
-            <div className="absolute top-0 bottom-0 left-1/2 w-[6px] bg-black -translate-x-1/2 z-10"></div>
+            <div className="absolute top-0 bottom-0 left-1/2 w-[4px] md:w-[6px] bg-black -translate-x-1/2 z-10" />
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-24 md:pt-28 z-20">
-              <div className="max-w-4xl w-full px-8 py-8">
-                {/* MAIN TITLE */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-6 pt-16 md:pt-28 z-20">
+              <div className="max-w-4xl w-full px-3 md:px-8 py-4 md:py-8">
                 <h1
                   className="
-                    text-4xl md:text-6xl font-extrabold text-white
+                    text-3xl sm:text-4xl md:text-6xl
+                    font-extrabold text-white
                     drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]
                   "
                 >
                   Car Accident Repair Services
                 </h1>
 
-                {/* GOLD SHINY DIVIDER */}
                 <div
                   className="
-                    mt-6 h-[3px] w-40 mx-auto
+                    mt-4 md:mt-6 h-[3px] w-28 md:w-40 mx-auto
                     bg-gradient-to-r from-transparent via-[#f1d37a] to-transparent
                     shadow-[0_0_12px_rgba(241,211,122,0.9)]
                   "
                 />
 
-                {/* PARAGRAPH */}
                 <p
                   className="
-                    mt-6 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed
-                    font-bold
+                    mt-4 md:mt-6 max-w-2xl mx-auto
+                    text-sm sm:text-base md:text-xl
+                    leading-relaxed font-bold
                     bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
                     bg-clip-text text-transparent
                   "
@@ -78,71 +77,68 @@ const AccidentRepair = () => {
         </section>
 
         {/* ================= PREMIUM FEATURE BUTTONS ================= */}
-<section className="relative -mt-8 md:-mt-16 pb-20 md:pb-24">
-  <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-    {features.map((item, index) => {
-      const Icon = item.icon;
+        <section className="relative -mt-4 md:-mt-16 pb-20 md:pb-24">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            {features.map((item, index) => {
+              const Icon = item.icon;
 
-      return (
-        <div
-          key={index}
-          className="
-            group relative
-            rounded-2xl md:rounded-3xl
-            bg-gradient-to-b from-black via-[#0d0d0d] to-black
-            border border-white/10
-            px-4 py-6 md:px-8 md:py-10
-            min-h-[140px] md:min-h-[220px]
-            flex flex-col items-center justify-center text-center
-            transition-all duration-300
-            hover:-translate-y-2
-            hover:border-[#C40014]
-            hover:shadow-[0_0_50px_rgba(196,0,20,0.35)]
-          "
-        >
-          {/* ICON CONTAINER */}
-          <div
-            className="
-              relative
-              w-14 h-14 md:w-20 md:h-20
-              flex items-center justify-center
-              rounded-full
-              border-2 border-[#D4AF37]
-              bg-black
-              shadow-[0_0_18px_rgba(212,175,55,0.35)]
-              transition-all duration-300
-              group-hover:scale-110
-              group-hover:shadow-[0_0_30px_rgba(212,175,55,0.55)]
-            "
-          >
-            <Icon size={26} strokeWidth={1.8} className="text-white md:hidden" />
-            <Icon size={40} strokeWidth={1.8} className="hidden md:block text-white" />
+              return (
+                <div
+                  key={index}
+                  className="
+                    group relative
+                    rounded-2xl md:rounded-3xl
+                    bg-gradient-to-b from-black via-[#0d0d0d] to-black
+                    border border-white/10
+                    px-4 py-6 md:px-8 md:py-10
+                    min-h-[140px] md:min-h-[220px]
+                    flex flex-col items-center justify-center text-center
+                    transition-all duration-300
+                    hover:-translate-y-2
+                    hover:border-[#C40014]
+                    hover:shadow-[0_0_50px_rgba(196,0,20,0.35)]
+                  "
+                >
+                  <div
+                    className="
+                      relative
+                      w-14 h-14 md:w-20 md:h-20
+                      flex items-center justify-center
+                      rounded-full
+                      border-2 border-[#D4AF37]
+                      bg-black
+                      shadow-[0_0_18px_rgba(212,175,55,0.35)]
+                      transition-all duration-300
+                      group-hover:scale-110
+                      group-hover:shadow-[0_0_30px_rgba(212,175,55,0.55)]
+                    "
+                  >
+                    <Icon size={26} strokeWidth={1.8} className="text-white md:hidden" />
+                    <Icon size={40} strokeWidth={1.8} className="hidden md:block text-white" />
+                  </div>
+
+                  <p
+                    className="
+                      mt-4 md:mt-6
+                      text-[10px] md:text-[13px]
+                      uppercase
+                      tracking-[0.12em] md:tracking-[0.35em]
+                      text-white font-semibold
+                      leading-snug
+                    "
+                  >
+                    {item.label}
+                  </p>
+
+                  <div className="mt-3 md:mt-5 h-[2px] w-12 md:w-20 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
+                </div>
+              );
+            })}
           </div>
-
-          {/* LABEL */}
-          <p
-            className="
-              mt-4 md:mt-6
-              text-[10px] md:text-[13px]
-              uppercase
-              tracking-[0.18em] md:tracking-[0.35em]
-              text-white font-semibold
-              leading-snug
-            "
-          >
-            {item.label}
-          </p>
-
-          {/* GOLD LINE */}
-          <div className="mt-3 md:mt-5 h-[2px] w-12 md:w-20 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
-        </div>
-      );
-    })}
-  </div>
-</section>
+        </section>
 
         {/* ================= MAIN SERVICE (TEXT ONLY) ================= */}
-        <section className="py-24 bg-black">
+        <section className="py-20 md:py-24 bg-black">
           <div className="max-w-4xl mx-auto px-6">
             <h2
               className="

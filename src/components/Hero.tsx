@@ -37,21 +37,28 @@ const Hero: React.FC = () => {
         pt-[64px] md:pt-0
       "
     >
-      <img
-        src="/32123.png"
-        alt="Luxury Lamborghini"
-        className="
-          absolute inset-0 h-full w-full
-          object-cover
-          scale-[1.02]
-          object-[52%_68%]
-          sm:object-[50%_72%]
-          md:scale-100 md:object-center
-        "
-      />
+      {/* Hero image: mobile uses cropped image, desktop keeps original */}
+      <picture>
+  {/* Mobile image */}
+  <source media="(max-width: 768px)" srcSet="/mob.png" />
 
+  {/* Desktop image (unchanged) */}
+  <img
+    src="/32123.png"
+    alt="Luxury Lamborghini"
+    className="
+      absolute inset-0
+      w-full h-full
+      object-contain md:object-cover
+      bg-black
+    "
+  />
+</picture>
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/82" />
 
+      {/* Content */}
       <div className="relative z-10 flex min-h-[95svh] md:h-screen items-end">
         <div className="w-full px-3 pb-2 sm:pb-3 md:px-0 md:pb-10">
           <div

@@ -9,8 +9,8 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const mobileBrowseRef = useRef(null);
-  const desktopBrowseRef = useRef(null);
+  const mobileBrowseRef = useRef<HTMLDivElement | null>(null);
+  const desktopBrowseRef = useRef<HTMLDivElement | null>(null);
 
   const navLinks = [
     { name: "Home", href: "#home", type: "section" },
@@ -20,7 +20,7 @@ const Navbar = () => {
     { name: "Contact", href: "#contact", type: "section" },
   ];
 
-  const handleSectionClick = (href) => {
+  const handleSectionClick = (href: string) => {
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
@@ -33,7 +33,7 @@ const Navbar = () => {
     setShowBrowse(false);
   };
 
-  const handlePageClick = (href) => {
+  const handlePageClick = (href: string) => {
     navigate(href);
     window.scrollTo({ top: 0, behavior: "smooth" });
     setIsOpen(false);
@@ -41,17 +41,17 @@ const Navbar = () => {
   };
 
   const navText =
-    "text-[11px] uppercase tracking-[0.30em] font-semibold text-white font-medium hover:text-white transition duration-300";
+    "text-[11px] uppercase tracking-[0.30em] font-semibold text-white hover:text-white transition duration-300 whitespace-nowrap";
 
   useEffect(() => {
-    const onDown = (e) => {
+    const onDown = (e: MouseEvent) => {
+      const target = e.target as Node;
+
       const mobileClickedInside =
-        mobileBrowseRef.current &&
-        mobileBrowseRef.current.contains(e.target);
+        mobileBrowseRef.current && mobileBrowseRef.current.contains(target);
 
       const desktopClickedInside =
-        desktopBrowseRef.current &&
-        desktopBrowseRef.current.contains(e.target);
+        desktopBrowseRef.current && desktopBrowseRef.current.contains(target);
 
       if (!mobileClickedInside && !desktopClickedInside) {
         setShowBrowse(false);
@@ -68,14 +68,18 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black">
-      <div className="relative h-20 md:h-24 flex items-center justify-between px-4 md:px-8 border-b border-gray-800">
-        {/* SEMI CIRCLE CUT */}
-        <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 md:-bottom-12 w-44 h-12 md:w-72 md:h-24 bg-black rounded-b-full z-0" />
+      {/* MOBILE NAV */}
+      <div className="md:hidden relative h-[88px] flex items-center justify-between px-4 border-b border-gray-800">
+        {/* mobile semi-circle */}
+        <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 w-[150px] h-[58px] bg-black rounded-b-full z-0" />
 
         {/* MOBILE LEFT: BROWSE */}
-        <div className="md:hidden flex items-center z-30 relative" ref={mobileBrowseRef}>
+        <div className="flex items-center z-30 relative" ref={mobileBrowseRef}>
           <button
-            onClick={() => setShowBrowse((v) => !v)}
+            onClick={() => {
+              setShowBrowse((v) => !v);
+              setIsOpen(false);
+            }}
             className="flex flex-col items-center text-white font-medium hover:text-white transition"
             aria-label="Browse"
             type="button"
@@ -87,7 +91,7 @@ const Navbar = () => {
           </button>
 
           {showBrowse && (
-            <div className="absolute left-0 top-[72px] w-56 bg-black/95 backdrop-blur-xl rounded-xl shadow-2xl py-2 border border-white/10 z-50">
+            <div className="absolute left-0 top-[64px] w-56 bg-black/95 backdrop-blur-xl rounded-xl shadow-2xl py-2 border border-white/10 z-50">
               <button
                 type="button"
                 onClick={() => handlePageClick("/services/accident-repairs")}
@@ -113,8 +117,38 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* DESKTOP LEFT SIDE */}
-        <div className="hidden md:flex items-center gap-10 z-10">
+        {/* MOBILE CENTER LOGO */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-1 z-20">
+          <img
+            src="/2.png"
+            alt="Unique Platinum Services"
+            className="h-[82px] w-auto object-contain"
+          />
+        </div>
+
+        {/* MOBILE RIGHT: MENU */}
+        <div className="flex items-center z-30">
+          <button
+            className="text-white"
+            onClick={() => {
+              setIsOpen((v) => !v);
+              setShowBrowse(false);
+            }}
+            aria-label="Toggle menu"
+            type="button"
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </div>
+
+      {/* DESKTOP NAV */}
+      <div className="hidden md:flex relative h-24 items-center justify-between px-8 border-b border-gray-800">
+        {/* desktop semi-circle */}
+        <div className="absolute left-1/2 -translate-x-1/2 -bottom-12 w-72 h-24 bg-black rounded-b-full z-0" />
+
+        {/* DESKTOP LEFT */}
+        <div className="flex items-center gap-10 z-10">
           <div className="relative" ref={desktopBrowseRef}>
             <button
               onClick={() => setShowBrowse((v) => !v)}
@@ -171,17 +205,17 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* CENTER LOGO */}
+        {/* DESKTOP CENTER LOGO */}
         <div className="absolute left-1/2 -translate-x-1/2 top-0 z-20">
           <img
             src="/2.png"
             alt="Unique Platinum Services"
-            className="h-20 md:h-36 object-contain"
+            className="h-36 object-contain"
           />
         </div>
 
-        {/* DESKTOP RIGHT SIDE */}
-        <div className="hidden md:flex gap-10 items-center z-10">
+        {/* DESKTOP RIGHT */}
+        <div className="flex gap-10 items-center z-10">
           {navLinks.slice(2, 4).map((link) => (
             <button
               key={link.name}
@@ -208,18 +242,6 @@ const Navbar = () => {
             Contact Us
           </Button>
         </div>
-
-        {/* MOBILE RIGHT: HAMBURGER */}
-        <div className="md:hidden flex items-center z-30">
-          <button
-            className="text-white"
-            onClick={() => setIsOpen((v) => !v)}
-            aria-label="Toggle menu"
-            type="button"
-          >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
       </div>
 
       {/* MOBILE MENU DROPDOWN */}
@@ -233,7 +255,7 @@ const Navbar = () => {
                   ? handlePageClick(link.href)
                   : handleSectionClick(link.href)
               }
-              className="block w-full text-left text-[11px] uppercase tracking-[0.30em] font-semibold text-white font-medium hover:text-white transition"
+              className="block w-full text-left text-[11px] uppercase tracking-[0.30em] font-semibold text-white hover:text-white transition"
               type="button"
             >
               {link.name}

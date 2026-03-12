@@ -28,11 +28,11 @@ const EngineDiagnostic = () => {
       <Navbar />
 
       <main className="bg-black">
-        {/* ================= MOBILE HERO IMAGE ONLY ================= */}
+        {/* ================= MOBILE HERO ================= */}
         <section className="md:hidden bg-black">
           <div className="relative w-full h-[220px] overflow-hidden bg-black">
             <img
-              src="/ed_1.jpeg"
+              src="/eng_mob.png"
               alt="Engine diagnostics"
               className="w-full h-full object-cover object-center"
             />
@@ -196,20 +196,7 @@ const EngineDiagnostic = () => {
 
             <div className="flex flex-col sm:flex-row justify-center gap-5">
               <a href={`tel:${phoneNumber}`} className="inline-flex justify-center">
-                <button
-                  className="
-                    group inline-flex items-center justify-center gap-3
-                    text-[11px] uppercase tracking-[0.30em] font-semibold
-                    px-8 py-3 rounded-lg text-white
-                    bg-gradient-to-r from-[#7A000D] via-[#C40014] to-[#7A000D]
-                    shadow-[0_10px_25px_rgba(196,0,20,0.35)]
-                    hover:brightness-110
-                    hover:shadow-[0_0_30px_rgba(196,0,20,0.55)]
-                    active:scale-[0.97]
-                    transition-all duration-200
-                    focus:outline-none focus:ring-2 focus:ring-[#C40014]/60 focus:ring-offset-2 focus:ring-offset-black
-                  "
-                >
+                <button className="group inline-flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.30em] font-semibold px-8 py-3 rounded-lg text-white bg-gradient-to-r from-[#7A000D] via-[#C40014] to-[#7A000D] shadow-[0_10px_25px_rgba(196,0,20,0.35)] hover:brightness-110 hover:shadow-[0_0_30px_rgba(196,0,20,0.55)] active:scale-[0.97] transition-all duration-200">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 border border-white/10">
                     <Phone className="h-4 w-4" />
                   </span>
@@ -219,18 +206,7 @@ const EngineDiagnostic = () => {
 
               <button
                 onClick={handleScrollToContact}
-                className="
-                  group inline-flex items-center justify-center gap-3
-                  text-[11px] uppercase tracking-[0.30em] font-semibold
-                  px-8 py-3 rounded-lg
-                  border border-white/20
-                  text-white/90
-                  bg-white/5
-                  hover:bg-white/10 hover:text-white
-                  active:scale-[0.98]
-                  transition-all duration-200
-                  focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50 focus:ring-offset-2 focus:ring-offset-black
-                "
+                className="group inline-flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.30em] font-semibold px-8 py-3 rounded-lg border border-white/20 text-white/90 bg-white/5 hover:bg-white/10 hover:text-white transition-all duration-200"
               >
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 border border-white/10">
                   <FileText className="h-4 w-4" />

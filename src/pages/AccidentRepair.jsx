@@ -25,24 +25,25 @@ const AccidentRepair = () => {
       <main className="bg-black">
         {/* ================= HERO IMAGE ================= */}
         <section className="w-full px-0">
-          <div className="relative w-full h-[58vh] md:h-[82vh] overflow-hidden bg-black">
+          <div className="relative w-full h-[52vh] sm:h-[60vh] md:h-[82vh] overflow-hidden bg-black">
             <img
               src="/acci_2.png"
               alt="Accident repairs"
-              className="w-full h-full object-contain md:object-cover bg-black"
+              className="w-full h-full object-cover object-center bg-black"
             />
 
             {/* dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/65" />
 
             {/* BLACK CENTER DIVIDER */}
-            <div className="absolute top-0 bottom-0 left-1/2 w-[4px] md:w-[6px] bg-black -translate-x-1/2 z-10" />
+            <div className="absolute top-0 bottom-0 left-1/2 w-[3px] md:w-[6px] bg-black -translate-x-1/2 z-10" />
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-6 pt-16 md:pt-28 z-20">
-              <div className="max-w-4xl w-full px-3 md:px-8 py-4 md:py-8">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-6 pt-10 md:pt-28 z-20">
+              <div className="max-w-4xl w-full px-2 md:px-8 py-4 md:py-8">
                 <h1
                   className="
                     text-3xl sm:text-4xl md:text-6xl
+                    leading-tight
                     font-extrabold text-white
                     drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]
                   "
@@ -52,7 +53,7 @@ const AccidentRepair = () => {
 
                 <div
                   className="
-                    mt-4 md:mt-6 h-[3px] w-28 md:w-40 mx-auto
+                    mt-3 md:mt-6 h-[3px] w-24 md:w-40 mx-auto
                     bg-gradient-to-r from-transparent via-[#f1d37a] to-transparent
                     shadow-[0_0_12px_rgba(241,211,122,0.9)]
                   "
@@ -60,8 +61,8 @@ const AccidentRepair = () => {
 
                 <p
                   className="
-                    mt-4 md:mt-6 max-w-2xl mx-auto
-                    text-sm sm:text-base md:text-xl
+                    mt-3 md:mt-6 max-w-2xl mx-auto
+                    text-xs sm:text-sm md:text-xl
                     leading-relaxed font-bold
                     bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
                     bg-clip-text text-transparent

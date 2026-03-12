@@ -23,27 +23,58 @@ const AccidentRepair = () => {
       <Navbar />
 
       <main className="bg-black">
-        {/* ================= HERO IMAGE ================= */}
-        <section className="w-full px-0">
-          <div className="relative w-full h-[52vh] sm:h-[60vh] md:h-[82vh] overflow-hidden bg-black">
+        {/* ================= MOBILE HERO ================= */}
+        <section className="md:hidden bg-black">
+          <div className="relative w-full">
             <img
               src="/acci_2.png"
               alt="Accident repairs"
-              className="w-full h-full object-cover object-center bg-black"
+              className="w-full h-[260px] object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/65" />
+            <div className="absolute top-0 bottom-0 left-1/2 w-[3px] bg-black -translate-x-1/2 z-10" />
+          </div>
+
+          <div className="px-5 pt-8 pb-10 text-center">
+            <h1
+              className="
+                text-4xl sm:text-5xl
+                font-extrabold leading-tight
+                bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
+                bg-clip-text text-transparent
+              "
+            >
+              Car Accident Repair Services
+            </h1>
+
+            <div className="mt-4 h-[3px] w-24 mx-auto bg-gradient-to-r from-transparent via-[#f1d37a] to-transparent" />
+
+            <p className="mt-5 text-sm leading-relaxed font-semibold text-[#d9d9d9]">
+              Fast, reliable accident repairs designed to restore safety,
+              performance, and appearance — so you can drive with confidence
+              again.
+            </p>
+          </div>
+        </section>
+
+        {/* ================= DESKTOP HERO ================= */}
+        <section className="hidden md:block w-full px-0">
+          <div className="relative w-full h-[82vh] overflow-hidden bg-black">
+            <img
+              src="/acci_2.png"
+              alt="Accident repairs"
+              className="w-full h-full object-cover bg-black"
             />
 
-            {/* dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/65" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/60" />
 
-            {/* BLACK CENTER DIVIDER */}
-            <div className="absolute top-0 bottom-0 left-1/2 w-[3px] md:w-[6px] bg-black -translate-x-1/2 z-10" />
+            <div className="absolute top-0 bottom-0 left-1/2 w-[6px] bg-black -translate-x-1/2 z-10" />
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-6 pt-10 md:pt-28 z-20">
-              <div className="max-w-4xl w-full px-2 md:px-8 py-4 md:py-8">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-28 z-20">
+              <div className="max-w-4xl w-full px-8 py-8">
                 <h1
                   className="
-                    text-3xl sm:text-4xl md:text-6xl
-                    leading-tight
+                    text-6xl
                     font-extrabold text-white
                     drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]
                   "
@@ -53,7 +84,7 @@ const AccidentRepair = () => {
 
                 <div
                   className="
-                    mt-3 md:mt-6 h-[3px] w-24 md:w-40 mx-auto
+                    mt-6 h-[3px] w-40 mx-auto
                     bg-gradient-to-r from-transparent via-[#f1d37a] to-transparent
                     shadow-[0_0_12px_rgba(241,211,122,0.9)]
                   "
@@ -61,9 +92,8 @@ const AccidentRepair = () => {
 
                 <p
                   className="
-                    mt-3 md:mt-6 max-w-2xl mx-auto
-                    text-xs sm:text-sm md:text-xl
-                    leading-relaxed font-bold
+                    mt-6 max-w-2xl mx-auto
+                    text-xl leading-relaxed font-bold
                     bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
                     bg-clip-text text-transparent
                   "
@@ -78,7 +108,7 @@ const AccidentRepair = () => {
         </section>
 
         {/* ================= PREMIUM FEATURE BUTTONS ================= */}
-        <section className="hidden md:block relative md:-mt-16 pb-24">
+        <section className="hidden md:block relative -mt-16 pb-24">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
             {features.map((item, index) => {
               const Icon = item.icon;
@@ -138,7 +168,7 @@ const AccidentRepair = () => {
         </section>
 
         {/* ================= MAIN SERVICE (TEXT ONLY) ================= */}
-        <section className="pt-12 pb-20 md:py-24 bg-black">
+        <section className="pt-8 pb-20 md:py-24 bg-black">
           <div className="max-w-4xl mx-auto px-6">
             <h2
               className="

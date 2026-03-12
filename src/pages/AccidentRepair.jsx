@@ -23,15 +23,15 @@ const AccidentRepair = () => {
       <Navbar />
 
       <main className="bg-black">
-        {/* ================= MOBILE HERO IMAGE ================= */}
+        {/* ================= MOBILE HERO IMAGE ONLY ================= */}
         <section className="md:hidden bg-black">
-          <div className="relative w-full h-[300px] overflow-hidden bg-black">
+          <div className="relative w-full h-[220px] overflow-hidden bg-black">
             <img
-              src="/acci_2_mobile.png"
+              src="/acci_2_mobile.jpg"
               alt="Accident repairs"
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/5 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/10 to-black/35" />
           </div>
         </section>
 
@@ -48,31 +48,39 @@ const AccidentRepair = () => {
 
             <div className="absolute top-0 bottom-0 left-1/2 w-[6px] bg-black -translate-x-1/2 z-10" />
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-24 z-20">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-28 z-20">
               <div className="max-w-5xl w-full px-8 py-8">
                 <h1
                   className="
                     text-6xl lg:text-7xl
                     font-extrabold text-white
-                    leading-[0.95]
-                    tracking-tight
+                    leading-tight
                     drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]
                   "
                 >
-                  Car Scratch &amp; Dent Repair
+                  Car Accident Repair Services
                 </h1>
+
+                <div
+                  className="
+                    mt-6 h-[3px] w-40 mx-auto
+                    bg-gradient-to-r from-transparent via-[#f1d37a] to-transparent
+                    shadow-[0_0_12px_rgba(241,211,122,0.9)]
+                  "
+                />
 
                 <p
                   className="
-                    mt-8 max-w-3xl mx-auto
+                    mt-6 max-w-3xl mx-auto
                     text-xl lg:text-2xl
-                    leading-snug font-bold
+                    leading-relaxed font-bold
                     bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
                     bg-clip-text text-transparent
                   "
                 >
-                  Minor dents or scratches? We restore your car quickly and
-                  professionally so it looks flawless again.
+                  Fast, reliable accident repairs designed to restore safety,
+                  performance, and appearance — so you can drive with confidence
+                  again.
                 </p>
               </div>
             </div>
@@ -144,27 +152,17 @@ const AccidentRepair = () => {
           <div className="max-w-4xl mx-auto px-6">
             <h2
               className="
-                text-[42px] sm:text-5xl md:text-5xl
-                font-extrabold leading-[1.05] text-center
+                text-4xl md:text-5xl font-extrabold leading-tight text-center
                 bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
                 bg-clip-text text-transparent
               "
             >
-              Car Accident
-              <br className="md:hidden" />
-              {" "}Repair Services
+              Car Accident Repair Services
             </h2>
 
             <div className="h-6 md:h-10" />
 
-            <p
-              className="
-                md:hidden
-                max-w-[340px] mx-auto
-                text-center text-[17px] leading-8
-                font-semibold text-white/92
-              "
-            >
+            <p className="md:hidden text-center text-base leading-relaxed font-semibold text-white/90 max-w-md mx-auto">
               Fast, reliable accident repairs designed to restore safety,
               performance, and appearance — so you can drive with confidence
               again.

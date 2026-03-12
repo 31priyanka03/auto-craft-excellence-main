@@ -38,7 +38,7 @@ const AccidentRepair = () => {
             {/* BLACK CENTER DIVIDER */}
             <div className="absolute top-0 bottom-0 left-1/2 w-[4px] md:w-[6px] bg-black -translate-x-1/2 z-10" />
 
-          <div className="hidden md:flex absolute inset-0 flex-col items-center justify-center text-center px-6 pt-28 z-20">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-6 pt-16 md:pt-28 z-20">
               <div className="max-w-4xl w-full px-3 md:px-8 py-4 md:py-8">
                 <h1
                   className="

@@ -86,65 +86,66 @@ const AccidentRepair = () => {
           </div>
         </section>
 
-        {/* ================= PREMIUM FEATURE BUTTONS ================= */}
-        <section className="hidden md:block relative -mt-16 pb-24">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
-            {features.map((item, index) => {
-              const Icon = item.icon;
+       {/* ================= PREMIUM FEATURE BUTTONS ================= */}
+<section className="relative -mt-8 md:-mt-16 pb-20 md:pb-24">
+  <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+    {features.map((item, index) => {
+      const Icon = item.icon;
 
-              return (
-                <div
-                  key={index}
-                  className="
-                    group relative
-                    rounded-3xl
-                    bg-gradient-to-b from-black via-[#0d0d0d] to-black
-                    border border-white/10
-                    px-8 py-10
-                    min-h-[220px]
-                    flex flex-col items-center justify-center text-center
-                    transition-all duration-300
-                    hover:-translate-y-2
-                    hover:border-[#C40014]
-                    hover:shadow-[0_0_50px_rgba(196,0,20,0.35)]
-                  "
-                >
-                  <div
-                    className="
-                      relative
-                      w-20 h-20
-                      flex items-center justify-center
-                      rounded-full
-                      border-2 border-[#D4AF37]
-                      bg-black
-                      shadow-[0_0_18px_rgba(212,175,55,0.35)]
-                      transition-all duration-300
-                      group-hover:scale-110
-                      group-hover:shadow-[0_0_30px_rgba(212,175,55,0.55)]
-                    "
-                  >
-                    <Icon size={40} strokeWidth={1.8} className="text-white" />
-                  </div>
-
-                  <p
-                    className="
-                      mt-6
-                      text-[13px]
-                      uppercase
-                      tracking-[0.35em]
-                      text-white font-semibold
-                      leading-snug
-                    "
-                  >
-                    {item.label}
-                  </p>
-
-                  <div className="mt-5 h-[2px] w-20 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
-                </div>
-              );
-            })}
+      return (
+        <div
+          key={index}
+          className="
+            group relative
+            rounded-2xl md:rounded-3xl
+            bg-gradient-to-b from-black via-[#0d0d0d] to-black
+            border border-white/10
+            px-4 py-6 md:px-8 md:py-10
+            min-h-[140px] md:min-h-[220px]
+            flex flex-col items-center justify-center text-center
+            transition-all duration-300
+            hover:-translate-y-2
+            hover:border-[#C40014]
+            hover:shadow-[0_0_50px_rgba(196,0,20,0.35)]
+          "
+        >
+          <div
+            className="
+              relative
+              w-14 h-14 md:w-20 md:h-20
+              flex items-center justify-center
+              rounded-full
+              border-2 border-[#D4AF37]
+              bg-black
+              shadow-[0_0_18px_rgba(212,175,55,0.35)]
+              transition-all duration-300
+              group-hover:scale-110
+              group-hover:shadow-[0_0_30px_rgba(212,175,55,0.55)]
+            "
+          >
+            <Icon size={26} strokeWidth={1.8} className="text-white md:hidden" />
+            <Icon size={40} strokeWidth={1.8} className="hidden md:block text-white" />
           </div>
-        </section>
+
+          <p
+            className="
+              mt-4 md:mt-6
+              text-[10px] md:text-[13px]
+              uppercase
+              tracking-[0.18em] md:tracking-[0.35em]
+              text-white font-semibold
+              leading-snug
+            "
+          >
+            {item.label}
+          </p>
+
+          <div className="mt-3 md:mt-5 h-[2px] w-12 md:w-20 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
+        </div>
+      );
+    })}
+  </div>
+</section>
 
         {/* ================= MAIN SERVICE CONTENT ================= */}
         <section className="pt-10 pb-20 md:py-24 bg-black">

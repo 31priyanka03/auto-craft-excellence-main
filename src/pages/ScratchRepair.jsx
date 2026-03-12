@@ -28,8 +28,20 @@ const ScratchRepair = () => {
       <Navbar />
 
       <main className="bg-black">
-        {/* HERO */}
-        <section className="w-full px-0">
+        {/* ================= MOBILE HERO IMAGE ONLY ================= */}
+        <section className="md:hidden bg-black">
+          <div className="relative w-full h-[220px] overflow-hidden bg-black">
+            <img
+              src="/acci_2_mobile.jpg"
+              alt="Scratch repair"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/10 to-black/35" />
+          </div>
+        </section>
+
+        {/* ================= DESKTOP HERO ================= */}
+        <section className="hidden md:block w-full px-0">
           <div className="relative w-full h-[82vh] overflow-hidden">
             <img
               src="/acci_2.png"
@@ -44,7 +56,6 @@ const ScratchRepair = () => {
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-24 md:pt-28 z-20">
               <div className="max-w-4xl w-full px-8 py-8">
-                {/* TITLE */}
                 <h1
                   className="
                     text-4xl md:text-6xl font-extrabold text-white
@@ -54,7 +65,6 @@ const ScratchRepair = () => {
                   Car Scratch & Dent Repair
                 </h1>
 
-                {/* GOLD DIVIDER */}
                 <div
                   className="
                     mt-6 h-[3px] w-40 mx-auto
@@ -63,7 +73,6 @@ const ScratchRepair = () => {
                   "
                 />
 
-                {/* DESCRIPTION */}
                 <p
                   className="
                     mt-6 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed
@@ -80,87 +89,92 @@ const ScratchRepair = () => {
           </div>
         </section>
 
-     {/* ================= PREMIUM FEATURE BUTTONS ================= */}
-<section className="relative -mt-8 md:-mt-16 pb-20 md:pb-24">
-  <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-    {features.map((item, index) => {
-      const Icon = item.icon;
+        {/* ================= PREMIUM FEATURE BUTTONS ================= */}
+        <section className="hidden md:block relative -mt-8 md:-mt-16 pb-20 md:pb-24">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-4 gap-8">
+            {features.map((item, index) => {
+              const Icon = item.icon;
 
-      return (
-        <div
-          key={index}
-          className="
-            group relative
-            rounded-2xl md:rounded-3xl
-            bg-gradient-to-b from-black via-[#0d0d0d] to-black
-            border border-white/10
-            px-4 py-6 md:px-8 md:py-10
-            min-h-[140px] md:min-h-[220px]
-            flex flex-col items-center justify-center text-center
-            transition-all duration-300
-            hover:-translate-y-2
-            hover:border-[#C40014]
-            hover:shadow-[0_0_50px_rgba(196,0,20,0.35)]
-          "
-        >
-          {/* ICON CONTAINER */}
-          <div
-            className="
-              relative
-              w-14 h-14 md:w-20 md:h-20
-              flex items-center justify-center
-              rounded-full
-              border-2 border-[#D4AF37]
-              bg-black
-              shadow-[0_0_18px_rgba(212,175,55,0.35)]
-              transition-all duration-300
-              group-hover:scale-110
-              group-hover:shadow-[0_0_30px_rgba(212,175,55,0.55)]
-            "
-          >
-            <Icon size={26} strokeWidth={1.8} className="text-white md:hidden" />
-            <Icon size={40} strokeWidth={1.8} className="hidden md:block text-white" />
+              return (
+                <div
+                  key={index}
+                  className="
+                    group relative
+                    rounded-3xl
+                    bg-gradient-to-b from-black via-[#0d0d0d] to-black
+                    border border-white/10
+                    px-8 py-10
+                    min-h-[220px]
+                    flex flex-col items-center justify-center text-center
+                    transition-all duration-300
+                    hover:-translate-y-2
+                    hover:border-[#C40014]
+                    hover:shadow-[0_0_50px_rgba(196,0,20,0.35)]
+                  "
+                >
+                  <div
+                    className="
+                      relative
+                      w-20 h-20
+                      flex items-center justify-center
+                      rounded-full
+                      border-2 border-[#D4AF37]
+                      bg-black
+                      shadow-[0_0_18px_rgba(212,175,55,0.35)]
+                      transition-all duration-300
+                      group-hover:scale-110
+                      group-hover:shadow-[0_0_30px_rgba(212,175,55,0.55)]
+                    "
+                  >
+                    <Icon size={40} strokeWidth={1.8} className="text-white" />
+                  </div>
+
+                  <p
+                    className="
+                      mt-6
+                      text-[13px]
+                      uppercase
+                      tracking-[0.18em] lg:tracking-[0.35em]
+                      text-white font-semibold
+                      leading-snug
+                    "
+                  >
+                    {item.label}
+                  </p>
+
+                  <div className="mt-5 h-[2px] w-20 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
+                </div>
+              );
+            })}
           </div>
+        </section>
 
-          {/* LABEL */}
-          <p
-            className="
-              mt-4 md:mt-6
-              text-[10px] md:text-[13px]
-              uppercase
-              tracking-[0.18em] md:tracking-[0.35em]
-              text-white font-semibold
-              leading-snug
-            "
-          >
-            {item.label}
-          </p>
-
-          {/* GOLD LINE */}
-          <div className="mt-3 md:mt-5 h-[2px] w-12 md:w-20 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
-        </div>
-      );
-    })}
-  </div>
-</section>
-        {/* CONTENT */}
-        <section className="py-24 bg-black">
+        {/* ================= MAIN CONTENT ================= */}
+        <section className="pt-10 pb-20 md:py-24 bg-black">
           <div className="max-w-5xl mx-auto px-6">
             <h2
               className="
                 text-4xl md:text-5xl
                 font-extrabold
                 leading-tight
-                mb-14
+                text-center
                 bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
                 bg-clip-text text-transparent
-                text-center
               "
             >
               Car Scratch & Dent Repair
             </h2>
 
-            <div className="max-w-3xl mx-auto space-y-6 text-slate-300 text-lg leading-relaxed text-justify">
+            <div className="h-6 md:h-10" />
+
+            <p className="md:hidden text-center text-base leading-relaxed font-semibold text-white/90 max-w-md mx-auto">
+              Minor dents or scratches? We restore your car quickly and
+              professionally so it looks flawless again.
+            </p>
+
+            <div className="h-8 md:h-10" />
+
+            <div className="max-w-3xl mx-auto space-y-6 text-slate-300 text-lg leading-relaxed text-center md:text-justify">
               <p>
                 Our expert technicians remove scratches and dents with precision,
                 restoring your vehicle’s bodywork to showroom condition.
@@ -172,14 +186,13 @@ const ScratchRepair = () => {
               </p>
 
               <p>
-                Quick turnaround times and affordable solutions mean your car will
-                be back on the road looking its best.
+                Quick turnaround times and affordable solutions mean your car
+                will be back on the road looking its best.
               </p>
             </div>
 
             <div className="h-12" />
 
-            {/* BUTTONS */}
             <div className="flex flex-col sm:flex-row justify-center gap-5">
               <a href={`tel:${phoneNumber}`} className="inline-flex justify-center">
                 <button
@@ -193,6 +206,7 @@ const ScratchRepair = () => {
                     hover:shadow-[0_0_30px_rgba(196,0,20,0.55)]
                     active:scale-[0.97]
                     transition-all duration-200
+                    focus:outline-none focus:ring-2 focus:ring-[#C40014]/60 focus:ring-offset-2 focus:ring-offset-black
                   "
                 >
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 border border-white/10">
@@ -212,7 +226,9 @@ const ScratchRepair = () => {
                   text-white/90
                   bg-white/5
                   hover:bg-white/10 hover:text-white
+                  active:scale-[0.98]
                   transition-all duration-200
+                  focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50 focus:ring-offset-2 focus:ring-offset-black
                 "
               >
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 border border-white/10">

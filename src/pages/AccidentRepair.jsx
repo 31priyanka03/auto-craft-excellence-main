@@ -23,37 +23,15 @@ const AccidentRepair = () => {
       <Navbar />
 
       <main className="bg-black">
-        {/* ================= MOBILE HERO ================= */}
+        {/* ================= MOBILE HERO IMAGE ONLY ================= */}
         <section className="md:hidden bg-black">
-          <div className="relative w-full">
+          <div className="relative w-full h-[220px] overflow-hidden bg-black">
             <img
-              src="/acci_2.png"
+              src="/acci_2_mobile.jpg"
               alt="Accident repairs"
-              className="w-full h-[260px] object-cover object-center"
+              className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/65" />
-            <div className="absolute top-0 bottom-0 left-1/2 w-[3px] bg-black -translate-x-1/2 z-10" />
-          </div>
-
-          <div className="px-5 pt-8 pb-10 text-center">
-            <h1
-              className="
-                text-4xl sm:text-5xl
-                font-extrabold leading-tight
-                bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
-                bg-clip-text text-transparent
-              "
-            >
-              Car Accident Repair Services
-            </h1>
-
-            <div className="mt-4 h-[3px] w-24 mx-auto bg-gradient-to-r from-transparent via-[#f1d37a] to-transparent" />
-
-            <p className="mt-5 text-sm leading-relaxed font-semibold text-[#d9d9d9]">
-              Fast, reliable accident repairs designed to restore safety,
-              performance, and appearance — so you can drive with confidence
-              again.
-            </p>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/10 to-black/35" />
           </div>
         </section>
 
@@ -63,7 +41,7 @@ const AccidentRepair = () => {
             <img
               src="/acci_2.png"
               alt="Accident repairs"
-              className="w-full h-full object-cover bg-black"
+              className="w-full h-full object-cover object-center bg-black"
             />
 
             <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/60" />
@@ -71,11 +49,12 @@ const AccidentRepair = () => {
             <div className="absolute top-0 bottom-0 left-1/2 w-[6px] bg-black -translate-x-1/2 z-10" />
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-28 z-20">
-              <div className="max-w-4xl w-full px-8 py-8">
+              <div className="max-w-5xl w-full px-8 py-8">
                 <h1
                   className="
-                    text-6xl
+                    text-6xl lg:text-7xl
                     font-extrabold text-white
+                    leading-tight
                     drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]
                   "
                 >
@@ -92,8 +71,9 @@ const AccidentRepair = () => {
 
                 <p
                   className="
-                    mt-6 max-w-2xl mx-auto
-                    text-xl leading-relaxed font-bold
+                    mt-6 max-w-3xl mx-auto
+                    text-xl lg:text-2xl
+                    leading-relaxed font-bold
                     bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
                     bg-clip-text text-transparent
                   "
@@ -167,8 +147,8 @@ const AccidentRepair = () => {
           </div>
         </section>
 
-        {/* ================= MAIN SERVICE (TEXT ONLY) ================= */}
-        <section className="pt-8 pb-20 md:py-24 bg-black">
+        {/* ================= MAIN SERVICE CONTENT ================= */}
+        <section className="pt-10 pb-20 md:py-24 bg-black">
           <div className="max-w-4xl mx-auto px-6">
             <h2
               className="
@@ -180,7 +160,15 @@ const AccidentRepair = () => {
               Car Accident Repair Services
             </h2>
 
-            <div className="h-10" />
+            <div className="h-6 md:h-10" />
+
+            <p className="md:hidden text-center text-base leading-relaxed font-semibold text-white/90 max-w-md mx-auto">
+              Fast, reliable accident repairs designed to restore safety,
+              performance, and appearance — so you can drive with confidence
+              again.
+            </p>
+
+            <div className="h-8 md:h-10" />
 
             <div className="space-y-6 text-slate-300 text-lg leading-relaxed text-center">
               <p>

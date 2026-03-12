@@ -46,15 +46,15 @@ const AccidentRepair = () => {
 
             <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/60" />
 
+            {/* BLACK CENTER DIVIDER */}
             <div className="absolute top-0 bottom-0 left-1/2 w-[6px] bg-black -translate-x-1/2 z-10" />
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-28 z-20">
-              <div className="max-w-5xl w-full px-8 py-8">
+            {/* SAME HERO TEXT FORMAT AS SCRATCH PAGE */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-24 md:pt-28 z-20">
+              <div className="max-w-4xl w-full px-8 py-8">
                 <h1
                   className="
-                    text-6xl lg:text-7xl
-                    font-extrabold text-white
-                    leading-tight
+                    text-4xl md:text-6xl font-extrabold text-white
                     drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]
                   "
                 >
@@ -71,9 +71,8 @@ const AccidentRepair = () => {
 
                 <p
                   className="
-                    mt-6 max-w-3xl mx-auto
-                    text-xl lg:text-2xl
-                    leading-relaxed font-bold
+                    mt-6 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed
+                    font-bold
                     bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
                     bg-clip-text text-transparent
                   "

@@ -25,120 +25,128 @@ const AccidentRepair = () => {
       <main className="bg-black">
         {/* ================= HERO IMAGE ================= */}
         <section className="w-full px-0">
-          <div className="relative w-full h-[58vh] md:h-[82vh] overflow-hidden bg-black">
+          <div className="relative w-full h-[48vh] md:h-[82vh] overflow-hidden bg-black">
             <img
               src="/acci_2.png"
               alt="Accident repairs"
-              className="w-full h-full object-contain md:object-cover bg-black"
+              className="w-full h-full object-cover md:object-cover object-center"
             />
 
-            {/* dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/60" />
+            {/* darker overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/75" />
 
-            {/* BLACK CENTER DIVIDER */}
-            <div className="absolute top-0 bottom-0 left-1/2 w-[4px] md:w-[6px] bg-black -translate-x-1/2 z-10" />
+            {/* center divider */}
+            <div className="absolute top-0 bottom-0 left-1/2 w-[3px] md:w-[6px] bg-black/90 -translate-x-1/2 z-10" />
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-6 pt-16 md:pt-28 z-20">
-              <div className="max-w-4xl w-full px-3 md:px-8 py-4 md:py-8">
-                <h1
-                  className="
-                    text-3xl sm:text-4xl md:text-6xl
-                    font-extrabold text-white
-                    drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]
-                  "
-                >
-                  Car Accident Repair Services
-                </h1>
+            {/* text block */}
+            <div className="absolute inset-0 flex items-center justify-center px-4 md:px-6 z-20">
+              <div className="max-w-4xl w-full">
+                <div className="mx-auto w-full max-w-[92%] md:max-w-4xl rounded-2xl md:rounded-none bg-black/35 md:bg-transparent backdrop-blur-[2px] md:backdrop-blur-0 px-4 py-4 md:px-8 md:py-8 text-center">
+                  <h1
+                    className="
+                      text-[28px] leading-[1.05] sm:text-4xl md:text-6xl
+                      font-extrabold text-white
+                      drop-shadow-[0_4px_10px_rgba(0,0,0,0.75)]
+                    "
+                  >
+                    Car Accident Repair Services
+                  </h1>
 
-                <div
-                  className="
-                    mt-4 md:mt-6 h-[3px] w-28 md:w-40 mx-auto
-                    bg-gradient-to-r from-transparent via-[#f1d37a] to-transparent
-                    shadow-[0_0_12px_rgba(241,211,122,0.9)]
-                  "
-                />
+                  <div
+                    className="
+                      mt-3 md:mt-6 h-[3px] w-24 md:w-40 mx-auto
+                      bg-gradient-to-r from-transparent via-[#f1d37a] to-transparent
+                      shadow-[0_0_12px_rgba(241,211,122,0.9)]
+                    "
+                  />
 
-                <p
-                  className="
-                    mt-4 md:mt-6 max-w-2xl mx-auto
-                    text-sm sm:text-base md:text-xl
-                    leading-relaxed font-bold
-                    bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
-                    bg-clip-text text-transparent
-                  "
-                >
-                  Fast, reliable accident repairs designed to restore safety,
-                  performance, and appearance — so you can drive with confidence
-                  again.
-                </p>
+                  <p
+                    className="
+                      mt-3 md:mt-6 max-w-2xl mx-auto
+                      text-[13px] sm:text-[15px] md:text-xl
+                      leading-snug md:leading-relaxed
+                      font-semibold md:font-bold
+                      bg-gradient-to-r from-[#c6a23a] via-[#f1d37a] to-[#c6a23a]
+                      bg-clip-text text-transparent
+                      drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]
+                    "
+                  >
+                    Fast, reliable accident repairs designed to restore safety,
+                    performance, and appearance — so you can drive with confidence
+                    again.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ================= PREMIUM FEATURE BUTTONS ================= */}
-        <section className="relative -mt-4 md:-mt-16 pb-20 md:pb-24">
-          <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            {features.map((item, index) => {
-              const Icon = item.icon;
+        {/* ================= FEATURE CARDS ================= */}
+        <section className="relative -mt-3 md:-mt-16 pb-16 md:pb-24">
+          {/* Mobile: horizontal scroll / Desktop: grid */}
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <div className="flex md:grid md:grid-cols-4 gap-3 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide">
+              {features.map((item, index) => {
+                const Icon = item.icon;
 
-              return (
-                <div
-                  key={index}
-                  className="
-                    group relative
-                    rounded-2xl md:rounded-3xl
-                    bg-gradient-to-b from-black via-[#0d0d0d] to-black
-                    border border-white/10
-                    px-4 py-6 md:px-8 md:py-10
-                    min-h-[140px] md:min-h-[220px]
-                    flex flex-col items-center justify-center text-center
-                    transition-all duration-300
-                    hover:-translate-y-2
-                    hover:border-[#C40014]
-                    hover:shadow-[0_0_50px_rgba(196,0,20,0.35)]
-                  "
-                >
+                return (
                   <div
+                    key={index}
                     className="
-                      relative
-                      w-14 h-14 md:w-20 md:h-20
-                      flex items-center justify-center
-                      rounded-full
-                      border-2 border-[#D4AF37]
-                      bg-black
-                      shadow-[0_0_18px_rgba(212,175,55,0.35)]
+                      group relative snap-start shrink-0
+                      min-w-[170px] sm:min-w-[190px] md:min-w-0
+                      rounded-2xl md:rounded-3xl
+                      bg-gradient-to-b from-black via-[#0d0d0d] to-black
+                      border border-white/10
+                      px-4 py-5 md:px-8 md:py-10
+                      min-h-[120px] md:min-h-[220px]
+                      flex flex-col items-center justify-center text-center
                       transition-all duration-300
-                      group-hover:scale-110
-                      group-hover:shadow-[0_0_30px_rgba(212,175,55,0.55)]
+                      hover:-translate-y-1 md:hover:-translate-y-2
+                      hover:border-[#C40014]
+                      hover:shadow-[0_0_30px_rgba(196,0,20,0.25)] md:hover:shadow-[0_0_50px_rgba(196,0,20,0.35)]
                     "
                   >
-                    <Icon size={26} strokeWidth={1.8} className="text-white md:hidden" />
-                    <Icon size={40} strokeWidth={1.8} className="hidden md:block text-white" />
+                    <div
+                      className="
+                        relative
+                        w-12 h-12 md:w-20 md:h-20
+                        flex items-center justify-center
+                        rounded-full
+                        border-2 border-[#D4AF37]
+                        bg-black
+                        shadow-[0_0_18px_rgba(212,175,55,0.35)]
+                        transition-all duration-300
+                        group-hover:scale-105 md:group-hover:scale-110
+                      "
+                    >
+                      <Icon size={22} strokeWidth={1.8} className="text-white md:hidden" />
+                      <Icon size={40} strokeWidth={1.8} className="hidden md:block text-white" />
+                    </div>
+
+                    <p
+                      className="
+                        mt-3 md:mt-6
+                        text-[10px] md:text-[13px]
+                        uppercase
+                        tracking-[0.12em] md:tracking-[0.35em]
+                        text-white font-semibold
+                        leading-snug
+                      "
+                    >
+                      {item.label}
+                    </p>
+
+                    <div className="mt-2 md:mt-5 h-[2px] w-10 md:w-20 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
                   </div>
-
-                  <p
-                    className="
-                      mt-4 md:mt-6
-                      text-[10px] md:text-[13px]
-                      uppercase
-                      tracking-[0.12em] md:tracking-[0.35em]
-                      text-white font-semibold
-                      leading-snug
-                    "
-                  >
-                    {item.label}
-                  </p>
-
-                  <div className="mt-3 md:mt-5 h-[2px] w-12 md:w-20 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* ================= MAIN SERVICE (TEXT ONLY) ================= */}
-        <section className="py-20 md:py-24 bg-black">
+        <section className="py-16 md:py-24 bg-black">
           <div className="max-w-4xl mx-auto px-6">
             <h2
               className="
@@ -150,7 +158,7 @@ const AccidentRepair = () => {
               Car Accident Repair Services
             </h2>
 
-            <div className="h-10" />
+            <div className="h-8 md:h-10" />
 
             <div className="space-y-6 text-slate-300 text-lg leading-relaxed text-center">
               <p>

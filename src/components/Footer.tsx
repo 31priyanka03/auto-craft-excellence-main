@@ -121,7 +121,7 @@ const Footer = () => {
           reserved.
 
           <div className="mt-2 text-[12px] text-slate-500">
-            Built by{" "}
+            Website Designed & Developed by {" "}
             <span className="text-[#D4AF37] font-semibold">
               PY Nexus
             </span>

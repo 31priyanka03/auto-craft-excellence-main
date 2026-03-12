@@ -65,8 +65,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "020 8050 0368",
-      href: "tel:020 8050 0368",
+      value: "0208 050 0368",
+      href: "tel:0208 050 0368",
       hoverType: "none",
     },
     {
@@ -81,7 +81,7 @@ const Contact = () => {
       label: "Registered Office:",
       value: (
         <>
-          Unimix House, Platinum Suite, Abbey, Middlesex, London
+          Unimix House, Platinum Suite, Abbey Road, Middlesex, London
           <br />
           NW10 7TR
         </>
@@ -93,7 +93,7 @@ const Contact = () => {
       label: "Bodyshop Centre:",
       value: (
         <>
-          Broadfields Venue (Rear of Blue Room), Harrow, Middlesex, London
+          Rear of Broadfields/Blue Room Venue, Harrow, Middlesex, London
           <br />
           HA2 6NH
         </>
